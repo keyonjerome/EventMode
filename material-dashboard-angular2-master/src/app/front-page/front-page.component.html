@@ -19,12 +19,11 @@
             position: fixed;
             top: 0;
             width: 100%;
+            font-size: 20px;
+            z-index: 500;
         }
         .fa-anchor, .fa-coffee {
             font-size: 200px
-        }
-        .EM-bar {
-            font-size: 20px
         }
         .gradient {
             background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
@@ -48,56 +47,128 @@
           background-color: #484A47;
           color: #FBFEF9;
         }
+        .hvr-grow {
+          display: inline-block;
+          vertical-align: middle;
+          -webkit-transform: perspective(1px) translateZ(0);
+          transform: perspective(1px) translateZ(0);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+          -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+          -webkit-transition-property: transform;
+          transition-property: transform;
+        }
+        .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+          -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+        }
+        .hvr-skew-forward {
+          display: inline-block;
+          vertical-align: middle;
+          -webkit-transform: perspective(1px) translateZ(0);
+          transform: perspective(1px) translateZ(0);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+          -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+          -webkit-transition-property: transform;
+          transition-property: transform;
+          -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+        }
+        .hvr-skew-forward:hover, .hvr-skew-forward:focus, .hvr-skew-forward:active {
+          -webkit-transform: skew(-10deg);
+          transform: skew(-10deg);
+        }
+        .hvr-fade {
+          display: inline-block;
+          vertical-align: middle;
+          -webkit-transform: perspective(1px) translateZ(0);
+          transform: perspective(1px) translateZ(0);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+          overflow: hidden;
+          -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+          -webkit-transition-property: color, background-color;
+          transition-property: color, background-color;
+        }
+        .hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active {
+          background-color: #2098D1;
+          color: white;
+        }
+        .newsletter-btn {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            color:#191923!important;
+            background-color:#FBFEF9!important
+        }
     </style>
     <body>
 
         <!-- Navbar -->
         <div class="EM-container">
             <div class="EM-bar almost-black">
-                <a href="Home.html" class="EM-bar-item w3-button w3-mobile active">Home</a>
-                <a routerLink="dashboard" class="EM-bar-item w3-button w3-mobile">Dashboard</a>
-               
+                <a routerLink="#" class="EM-bar-item w3-button w3-mobile active hvr-fade"><i class="fa fa-home w3-margin-right"></i>Home</a>
+                <a routerLink="dashboard" class="EM-bar-item w3-button w3-mobile hvr-fade"><i class="fa fa-dashboard w3-margin-right"></i>Dashboard</a>
+                <!-- <a href="events.html" class="EM-bar-item w3-button w3-mobile hvr-fade"><i class="fa fa-arrow-right w3-margin-right"></i>Our List</a> -->
             </div>
         </div>
 
         <!-- Header -->
         <header class="EM-container w3-center gradient" style="padding:128px 16px">
-            <h1 class="w3-margin w3-jumbo almost-white main-title">Event Mode</h1>
+            <img src="../../assets/img/full_logo.png" alt="Logo and Text" style="width:80%;max-width:520px" class="w3-margin">
             <p class="w3-xlarge">Discover Events That Unite The Next Generation Of STEM Leaders</p>
-            <button class="w3-button almost-black w3-padding-large w3-large w3-margin-top">Check Our List</button>
+            <a class="w3-button almost-black w3-padding-large w3-large w3-margin-top hvr-skew-forward" routerLink="dashboard">
+                Check Our List
+                <i class="fa fa-arrow-right w3-margin-left"></i>
+            </a>
         </header>
 
+        <div class="almost-black">
+           <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+             <h2 class="w3-wide w3-center">NEWSLETTER</h2>
+             <p class="w3-opacity w3-center"><i>Get a monthly email with the best events!</i></p><br>
+
+             <form class="w3-container">
+                <p>
+                    <input class="w3-input" type="text">
+                    <label>Your Email</label>
+                </p>
+                <button class="w3-btn newsletter-btn hvr-skew-forward">Submit</button>
+            </form>
+
+         </div>
+        </div>
+
         <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
-          <h2 class="w3-wide">THE TEAM</h2>
-          <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <h2 class="w3-wide">OUR VISION</h2>
+          <p class="w3-justify">We all met for the first time at Hack the Hammer II, and we quickly decided on our project: A way for teens across Ontario to find STEM events. Attending events is crucial for networking, getting inspired, and exposing oneself to a whole new world of ideas and discoveries. It turns out that not every event is marketed on Facebook.com or Meetup.com, so we collected info on nearly 1000 events from different APIs using Python. The frontend was built with Angular, and the email newsletter was made with the Mailgun Node.js API. We hope you find our platform useful!</p>
           <div class="w3-row w3-padding-32">
             <div class="w3-quarter">
               <p>Simon</p>
-              <img src="teampics/simon.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:90%">
+              <img src="../../assets/teampics/simon.jpg" class="w3-round hvr-grow" alt="Simon Picture" style="width:90%">
             </div>
             <div class="w3-quarter">
               <p>Keyon</p>
-              <img src="teampics/keyon.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:90%">
+              <img src="../../assets/teampics/keyon.jpg" class="w3-round hvr-grow" alt="Keyon Picture" style="width:90%">
             </div>
             <div class="w3-quarter">
               <p>Calder</p>
-              <img src="teampics/calder.jpg" class="w3-round" alt="Random Name" style="width:90%">
+              <img src="../../assets/teampics/calder.jpg" class="w3-round hvr-grow" alt="Calder Picture" style="width:90%">
             </div>
             <div class="w3-quarter">
               <p>Evan</p>
-              <img src="teampics/evan.jpg" class="w3-round" alt="Random Name" style="width:90%">
+              <img src="../../assets/teampics/evan.jpg" class="w3-round hvr-grow" alt="Evan Picture" style="width:90%">
             </div>
           </div>
         </div>
 
         <!-- Footer -->
-        <footer class="EM-container w3-padding-64 w3-center w3-opacity">
+        <footer class="EM-container w3-padding-64 w3-center grayish">
             <div class="w3-xlarge w3-padding-32">
                 <a class="fa fa-github w3-hover-opacity" href="https://github.com/keyonjerome/EventMode" target="_blank"></a>
             </div>
-            <p>Powered by Simon, Keyon, Evan, Calder</p>
+            <p>Developed by Simon, Keyon, Calder, and Evan</p>
         </footer>
 
         <script>
