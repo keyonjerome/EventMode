@@ -75,7 +75,7 @@
                         <div class="card-header card-header-danger">
                             <h4 class="card-title ">Simple Table</h4>
                             <p class="card-category"> Here is a subtitle for this table</p>
-                            <button class="mat-raised-button" (click)="onPress()"></button>
+                            <!-- <button class="mat-raised-button" (click)="onPress()"></button> -->
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -88,17 +88,21 @@
                                             Venue 
                                         </th>
                                         <th>
-                                            Start Time
+                                        City
                                         </th>
                                         <th>
-                                            City
+                                            Venue Address
                                         </th>
                                         <th>
-                                            Salary
+                                                Start Time
+                                            </th>
+                                        <th>
+                                            
                                         </th>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let event of events">
+                                        <tr *ngFor="let event of eventList">
+                                            
                                             <td>
                                                 {{event.title}}
                                             </td>
@@ -106,13 +110,15 @@
                                                 {{event.venue_name}}
                                             </td>
                                             <td>
-                                                {{event.start_time}}
+                                          
+                                                {{event.city_name}}
                                             </td>
                                             <td>
-                                                Oud-Turnhout
+                                                    {{event.venue_address}}
+                                          
                                             </td>
-                                            <td class="text-primary">
-                                                $36,738
+                                            <td>
+                                                    {{event.start_time}}
                                             </td>
                                         </tr>
                                         

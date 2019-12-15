@@ -102,10 +102,10 @@ export class DashboardComponent implements OnInit {
     this.http.get('https://eventmode-7f117.firebaseio.com/events.json',{}).subscribe(responseData => {
       console.log(JSON.parse(JSON.stringify(responseData)));
       this.eventList = JSON.parse(JSON.stringify(responseData));
-      console.log(this.eventList[0]);
-      for(let item in responseData) {
-        this.eventList.push(responseData);
-      }
+      // console.log(this.eventList[0]);
+      // for(let item in responseData) {
+      //   // this.eventList.push(responseData);
+      // }
       })
       // console.log(this.eventList);
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
