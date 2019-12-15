@@ -37,6 +37,7 @@ import {CdkTableModule} from '@angular/cdk/table';
 import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { FrontPageComponent } from './front-page/front-page.component';
 @NgModule({
   imports: [
     MatNativeDateModule,
@@ -61,6 +62,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    FrontPageComponent,
 
   ],
   exports: [    MatProgressSpinnerModule,

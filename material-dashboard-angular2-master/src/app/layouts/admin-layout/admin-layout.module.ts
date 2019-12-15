@@ -20,6 +20,7 @@ import {
   MatTooltipModule,
   MatSelectModule
 } from '@angular/material';
+// import { FrontPageComponent } from 'app/front-page/front-page.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -42,6 +43,7 @@ import {
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    // FrontPageComponent
   ]
 })
 

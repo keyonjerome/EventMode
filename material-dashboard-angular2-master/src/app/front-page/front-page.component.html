@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Event Mode - Home</title>
+    <link rel="icon" href="favicon32.png" type="image/png" sizes="32x32">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6, button {
+            font-family: 'Poppins', sans-serif;
+        }
+        a {
+            text-decoration:none;
+        }
+        .EM-bar {
+            font-family: 'Poppins', sans-serif;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        .fa-anchor, .fa-coffee {
+            font-size: 200px
+        }
+        .EM-bar {
+            font-size: 20px
+        }
+        .gradient {
+            background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+        }
+        .almost-black {
+            color:#fff!important;
+            background-color:#191923!important
+        }
+        .almost-white {
+            color:#FBFEF9!important
+        }
+        .grayish {
+            color:#fff!important;
+            background-color:#484A47!important
+        }
+        .main-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight:bold;
+        }
+        .active {
+          background-color: #484A47;
+          color: #FBFEF9;
+        }
+    </style>
+    <body>
+
+        <!-- Navbar -->
+        <div class="EM-container">
+            <div class="EM-bar almost-black">
+                <a href="Home.html" class="EM-bar-item w3-button w3-mobile active">Home</a>
+                <a href="dashboard.html" class="EM-bar-item w3-button w3-mobile">Dashboard</a>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header class="EM-container w3-center gradient" style="padding:128px 16px">
+            <h1 class="w3-margin w3-jumbo almost-white main-title">Event Mode</h1>
+            <p class="w3-xlarge">Discover Events That Unite The Next Generation Of STEM Leaders</p>
+            <button class="w3-button almost-black w3-padding-large w3-large w3-margin-top">Check Our List</button>
+        </header>
+
+        <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+          <h2 class="w3-wide">THE TEAM</h2>
+          <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="w3-row w3-padding-32">
+            <div class="w3-quarter">
+              <p>Simon</p>
+              <img src="teampics/simon.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:90%">
+            </div>
+            <div class="w3-quarter">
+              <p>Keyon</p>
+              <img src="teampics/keyon.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:90%">
+            </div>
+            <div class="w3-quarter">
+              <p>Calder</p>
+              <img src="teampics/calder.jpg" class="w3-round" alt="Random Name" style="width:90%">
+            </div>
+            <div class="w3-quarter">
+              <p>Evan</p>
+              <img src="teampics/evan.jpg" class="w3-round" alt="Random Name" style="width:90%">
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="EM-container w3-padding-64 w3-center w3-opacity">
+            <div class="w3-xlarge w3-padding-32">
+                <a class="fa fa-github w3-hover-opacity" href="https://github.com/keyonjerome/EventMode" target="_blank"></a>
+            </div>
+            <p>Powered by Simon, Keyon, Evan, Calder</p>
+        </footer>
+
+        <script>
+            // Used to toggle the menu on small screens when clicking on the menu button
+            function myFunction() {
+                var x = document.getElementById("navDemo");
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else {
+                    x.className = x.className.replace(" w3-show", "");
+                }
+            }
+        </script>
+
+    </body>
+</html>
