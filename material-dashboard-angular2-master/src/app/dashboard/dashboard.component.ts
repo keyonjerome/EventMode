@@ -1,6 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TRANSLATIONS_FORMAT } from '@angular/core';
 import * as Chartist from 'chartist';
 import * as eventData from '../../assets/eventful_engineering.json';
+import {  AngularFireDatabase } from '@angular/fire/database';
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -8,7 +14,29 @@ import * as eventData from '../../assets/eventful_engineering.json';
 })
 export class DashboardComponent implements OnInit {
   events = 0;
-  constructor() { }
+  items: Observable<any[]>;
+  data:any;
+  dat: any;
+  eventList = [];
+  constructor(db: AngularFireDatabase,private http:HttpClient) {
+    // this.data = db.list('events').snapshotChanges().forEach(snapshot => {
+    //   let event =snapshot.;
+    //   console.log(event);
+    // })
+    // console.log(this.data);
+    // // console.log("ref: " + dbref('events/').on('value',function(snapshot) {
+    // //   this.dat = snapshot.val;
+    // }));
+
+    // console.log("dat: " + this.dat);
+  }
+  getData() {
+    
+    return this.data;
+  }
+    
+
+  
   startAnimationForLineChart(chart){
       let seq: any, delays: any, durations: any;
       seq = 0;
@@ -65,9 +93,23 @@ export class DashboardComponent implements OnInit {
 
       seq2 = 0;
   };
+  onPress() {
+    this.http.get('https://eventmode-7f117.firebaseio.com/events.json',{}).subscribe(responseData => {
+    console.log(responseData);
+    })
+  }
   ngOnInit() {
+    this.http.get('https://eventmode-7f117.firebaseio.com/events.json',{}).subscribe(responseData => {
+      console.log(JSON.parse(JSON.stringify(responseData)));
+      this.eventList = JSON.parse(JSON.stringify(responseData));
+      console.log(this.eventList[0]);
+      for(let item in responseData) {
+        this.eventList.push(responseData);
+      }
+      })
+      // console.log(this.eventList);
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
-      console.log(eventData.search_time);
+      // console.log(eventData.search_time);
       this.events = eventData.events.event;
       
       const dataDailySalesChart: any = {
