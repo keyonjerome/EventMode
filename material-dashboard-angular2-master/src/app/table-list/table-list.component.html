@@ -9,44 +9,58 @@
                   </div>
                   <div class="card-body">
                       <div class="table-responsive">
-                          <table class="table">
-                              <thead class=" text-primary">
-                                  <th>
-                                      ID
-                                  </th>
-                                  <th>
-                                      Name
-                                  </th>
-                                  <th>
-                                      Country
-                                  </th>
-                                  <th>
-                                      City
-                                  </th>
-                                  <th>
-                                      Salary
-                                  </th>
-                              </thead>
-                              <tbody>
-                                  <tr>
-                                      <td>
-                                          1
-                                      </td>
-                                      <td>
-                                          Dakota Rice
-                                      </td>
-                                      <td>
-                                          Niger
-                                      </td>
-                                      <td>
-                                          Oud-Turnhout
-                                      </td>
-                                      <td class="text-primary">
-                                          $36,738
-                                      </td>
-                                  </tr>
-                              </tbody>
-                          </table>
+                            <table class="table">
+                                    <thead class=" text-primary">
+                                        <th>
+                                            Title
+                                        </th>
+                                        <th>
+                                            Venue 
+                                        </th>
+                                        <th>
+                                            Venue Address
+                                        </th>
+                                        <th>
+                                            City
+                                        </th>
+                                        <th>
+                                                Start Time
+                                    </th>
+                                        
+                                    </thead>
+                                    <tbody>
+                                        <div>
+                                            
+                                <!-- <mat-spinner>
+                                </mat-spinner> -->
+                                        </div>
+                                        <div class="row">
+                                        <div *ngIf="eventList.length < 1" class="lds-facebook text-center col-4 offset-4"><div></div><div></div><div></div></div>
+                                            
+                                    </div>
+                                        <tr *ngFor="let event of eventList">
+                                            <td>
+                                                {{event.title}}
+                                            </td>
+                                            <td>
+                                            {{event.venue_name}}
+                                            </td>
+                                            <td>
+                                                {{event.venue_address}}
+                                            </td>
+                                            <td>
+                                                {{event.city_name}}
+                                            </td>
+                                            <td>
+                                                {{event.start_time}}
+                                            </td>
+                                            <td>
+                                                <button class="mat-raised-button">DELETE</button>
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
                       </div>
                   </div>
               </div>

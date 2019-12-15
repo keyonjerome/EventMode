@@ -1,5 +1,5 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -38,6 +38,7 @@ import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { FrontPageComponent } from './front-page/front-page.component';
+import {EventService} from './event.service'
 @NgModule({
   imports: [
     MatNativeDateModule,
@@ -67,7 +68,14 @@ import { FrontPageComponent } from './front-page/front-page.component';
   ],
   exports: [    MatProgressSpinnerModule,
     MatProgressBarModule,],
-  providers: [],
+    providers: [
+      EventService,
+      {
+        provide: APP_INITIALIZER,
+        useFactory: (ds: EventService) => function() {return ds.init()},
+        deps: [EventService],
+        multi: true
+      }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

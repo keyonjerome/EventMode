@@ -8,6 +8,7 @@ import {MatProgressSpinnerModule} from '@angular/material';
 import 'rxjs/add/operator/map';
 import { map } from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
+import { EventService } from 'app/event.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,7 +21,7 @@ export class DashboardComponent implements OnInit {
   data:any;
   dat: any;
   eventList = [];
-  constructor(db: AngularFireDatabase,private http:HttpClient) {
+  constructor(db: AngularFireDatabase,private http:HttpClient,private eventService:EventService) {
     // this.data = db.list('events').snapshotChanges().forEach(snapshot => {
     //   let event =snapshot.;
     //   console.log(event);
@@ -31,7 +32,14 @@ export class DashboardComponent implements OnInit {
     // }));
 
     // console.log("dat: " + this.dat);
-  }
+    eventService.init();
+    this.eventList = eventService.getEvents();
+    for(let event in this.eventList)
+ {
+   if (event == null) {
+    this.eventList.shift();
+   }
+ }  }
   getData() {
     
     return this.data;
