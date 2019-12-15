@@ -16,9 +16,6 @@
         }
         .EM-bar {
             font-family: 'Poppins', sans-serif;
-            position: fixed;
-            top: 0;
-            width: 100%;
             font-size: 20px;
             z-index: 500;
         }
@@ -105,71 +102,84 @@
     </style>
     <body>
 
-        <!-- Navbar -->
+        <!-- START Navbar -->
         <div class="EM-container">
             <div class="EM-bar almost-black">
-                <a routerLink="#" class="EM-bar-item w3-button w3-mobile active hvr-fade"><i class="fa fa-home w3-margin-right"></i>Home</a>
-                <a routerLink="dashboard" class="EM-bar-item w3-button w3-mobile hvr-fade"><i class="fa fa-dashboard w3-margin-right"></i>Dashboard</a>
+                <a href="home.html" class="EM-bar-item w3-button w3-mobile active hvr-fade"><i class="fa fa-home w3-margin-right"></i>Home</a>
+                <a href="dashboard.html" class="EM-bar-item w3-button w3-mobile hvr-fade"><i class="fa fa-dashboard w3-margin-right"></i>Dashboard</a>
                 <!-- <a href="events.html" class="EM-bar-item w3-button w3-mobile hvr-fade"><i class="fa fa-arrow-right w3-margin-right"></i>Our List</a> -->
             </div>
         </div>
+        <!-- END Navbar -->
 
-        <!-- Header -->
+        <!-- START Header -->
         <header class="EM-container w3-center gradient" style="padding:128px 16px">
-            <img src="../../assets/img/full_logo.png" alt="Logo and Text" style="width:80%;max-width:520px" class="w3-margin">
+            <img src="full_logo.png" alt="Logo and Text" style="width:80%;max-width:520px" class="w3-margin">
             <p class="w3-xlarge">Discover Events That Unite The Next Generation Of STEM Leaders</p>
-            <a class="w3-button almost-black w3-padding-large w3-large w3-margin-top hvr-skew-forward" routerLink="dashboard">
+            <a class="w3-button almost-black w3-padding-large w3-large w3-margin-top hvr-skew-forward" href="events.html">
                 Check Our List
                 <i class="fa fa-arrow-right w3-margin-left"></i>
             </a>
         </header>
+        <!-- END Header -->
 
+        <!-- START Newsletter -->
         <div class="almost-black">
            <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
              <h2 class="w3-wide w3-center">NEWSLETTER</h2>
              <p class="w3-opacity w3-center"><i>Get a monthly email with the best events!</i></p><br>
-
-             <form class="w3-container">
-                <p>
-                    <input class="w3-input" type="text">
-                    <label>Your Email</label>
-                </p>
-                <button class="w3-btn newsletter-btn hvr-skew-forward">Submit</button>
-            </form>
-
+                 <div id="mc_embed_signup">
+                     <form action="https://eventmode.us4.list-manage.com/subscribe/post?u=d5f09065d27bd3d882cbee88e&amp;id=7fb0037d66" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate w3-container" target="_blank" novalidate>
+                         <div id="mc_embed_signup_scroll">
+                             <input type="email" value="" name="EMAIL" class="w3-input" id="mce-EMAIL">
+                             <label>Your Email</label>
+                        </div>
+                        <div id="mce-responses" class="clear">
+                          <div class="response" id="mce-error-response" style="display:none"></div>
+                          <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>
+                        <div>
+                          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d5f09065d27bd3d882cbee88e_7fb0037d66" tabindex="-1" value=""></div>
+                          <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button w3-btn newsletter-btn hvr-skew-forward"></div>
+                        </div>
+                    </form>
+                </div>
          </div>
         </div>
 
+         <!-- START Our Vision -->
         <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
           <h2 class="w3-wide">OUR VISION</h2>
           <p class="w3-justify">We all met for the first time at Hack the Hammer II, and we quickly decided on our project: A way for teens across Ontario to find STEM events. Attending events is crucial for networking, getting inspired, and exposing oneself to a whole new world of ideas and discoveries. It turns out that not every event is marketed on Facebook.com or Meetup.com, so we collected info on nearly 1000 events from different APIs using Python. The frontend was built with Angular, and the email newsletter was made with the Mailgun Node.js API. We hope you find our platform useful!</p>
           <div class="w3-row w3-padding-32">
             <div class="w3-quarter">
               <p>Simon</p>
-              <img src="../../assets/teampics/simon.jpg" class="w3-round hvr-grow" alt="Simon Picture" style="width:90%">
+              <img src="teampics/simon.jpg" class="w3-round hvr-grow" alt="Simon Picture" style="width:90%">
             </div>
             <div class="w3-quarter">
               <p>Keyon</p>
-              <img src="../../assets/teampics/keyon.jpg" class="w3-round hvr-grow" alt="Keyon Picture" style="width:90%">
+              <img src="teampics/keyon.jpg" class="w3-round hvr-grow" alt="Keyon Picture" style="width:90%">
             </div>
             <div class="w3-quarter">
               <p>Calder</p>
-              <img src="../../assets/teampics/calder.jpg" class="w3-round hvr-grow" alt="Calder Picture" style="width:90%">
+              <img src="teampics/calder.jpg" class="w3-round hvr-grow" alt="Calder Picture" style="width:90%">
             </div>
             <div class="w3-quarter">
               <p>Evan</p>
-              <img src="../../assets/teampics/evan.jpg" class="w3-round hvr-grow" alt="Evan Picture" style="width:90%">
+              <img src="teampics/evan.jpg" class="w3-round hvr-grow" alt="Evan Picture" style="width:90%">
             </div>
           </div>
         </div>
+        <!-- END Our Vision -->
 
-        <!-- Footer -->
+        <!-- START Footer -->
         <footer class="EM-container w3-padding-64 w3-center grayish">
             <div class="w3-xlarge w3-padding-32">
                 <a class="fa fa-github w3-hover-opacity" href="https://github.com/keyonjerome/EventMode" target="_blank"></a>
             </div>
             <p>Developed by Simon, Keyon, Calder, and Evan</p>
         </footer>
+        <!-- END Footer -->
 
         <script>
             // Used to toggle the menu on small screens when clicking on the menu button
