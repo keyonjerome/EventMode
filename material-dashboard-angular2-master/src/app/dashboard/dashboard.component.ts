@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
-
+import * as eventData from '../../assets/eventful_engineering.json';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  events = 0;
   constructor() { }
   startAnimationForLineChart(chart){
       let seq: any, delays: any, durations: any;
@@ -67,7 +67,9 @@ export class DashboardComponent implements OnInit {
   };
   ngOnInit() {
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
-
+      console.log(eventData.search_time);
+      this.events = eventData.events.event;
+      
       const dataDailySalesChart: any = {
           labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
           series: [

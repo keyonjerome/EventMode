@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-
+import {AngularFireDatabase} from '@angular/fire/database';
 
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';

@@ -43,6 +43,29 @@
       </svg>
     </div>
   </app-root>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCNFHQcv117GREgOTO1qtQS5s3GIpB_Xmc",
+    authDomain: "eventmode-7f117.firebaseapp.com",
+    databaseURL: "https://eventmode-7f117.firebaseio.com",
+    projectId: "eventmode-7f117",
+    storageBucket: "eventmode-7f117.appspot.com",
+    messagingSenderId: "969787354837",
+    appId: "1:969787354837:web:d083e02ed69e79432abc5c",
+    measurementId: "G-KFB00TE0KH"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 </body>
 
 
