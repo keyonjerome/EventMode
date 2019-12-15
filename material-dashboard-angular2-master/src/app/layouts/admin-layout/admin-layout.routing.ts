@@ -56,7 +56,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'add-event',   component: UserProfileComponent },
     // { path:'',component:FrontPageComponent}
-    // { path: 'table-list',     component: TableListComponent },
+    { path: 'admin',     component: TableListComponent },
     // { path: 'typography',     component: TypographyComponent },
     // { path: 'icons',          component: IconsComponent },
     // { path: 'maps',           component: MapsComponent },
