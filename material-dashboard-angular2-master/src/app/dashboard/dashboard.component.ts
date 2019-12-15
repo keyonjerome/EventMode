@@ -1,8 +1,10 @@
 import { Component, OnInit, TRANSLATIONS_FORMAT } from '@angular/core';
 import * as Chartist from 'chartist';
-import * as eventData from '../../assets/eventful_engineering.json';
+// import * as eventData from '../../assets/eventful_engineering.json';
 import {  AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
+import {MatProgressSpinnerModule} from '@angular/material';
+// import {MatSpinnerModule} from '@angular/material';
 import 'rxjs/add/operator/map';
 import { map } from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
@@ -110,7 +112,7 @@ export class DashboardComponent implements OnInit {
       // console.log(this.eventList);
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
       // console.log(eventData.search_time);
-      this.events = eventData.events.event;
+      // this.events = eventData.events.event;
       
       const dataDailySalesChart: any = {
           labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],

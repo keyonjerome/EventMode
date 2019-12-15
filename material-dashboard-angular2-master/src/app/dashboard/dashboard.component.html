@@ -99,7 +99,16 @@
                                         
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let event of events">
+                                        <div>
+                                            
+                                <!-- <mat-spinner>
+                                </mat-spinner> -->
+                                        </div>
+                                        <div class="row">
+                                        <div *ngIf="eventList.length < 1" class="lds-facebook text-center col-4 offset-4"><div></div><div></div><div></div></div>
+                                            
+                                    </div>
+                                        <tr *ngFor="let event of eventList">
                                             <td>
                                                 {{event.title}}
                                             </td>
